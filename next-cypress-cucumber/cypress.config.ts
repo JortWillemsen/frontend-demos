@@ -16,7 +16,7 @@ async function setupNodeEvents(
     webpack({
       webpackOptions: {
         resolve: {
-          extensions: [".ts", ".js"],
+          extensions: [".ts", ".js", ".tsx", "jsx"],
         },
         module: {
           rules: [
@@ -48,39 +48,6 @@ async function setupNodeEvents(
   return config;
 }
 
-const webpackConfig = (
-  cypressConfig: Cypress.PluginConfigOptions
-): Webpack.Configuration => {
-  return {
-    resolve: {
-      extensions: [".js", ".ts", ".tsx"],
-    },
-    module: {
-      rules: [
-        {
-          test: /\.tsx?$/,
-          exclude: [/node_modules/],
-          use: [
-            {
-              loader: "ts-loader",
-              options: { transpileOnly: true },
-            },
-          ],
-        },
-        {
-          test: /\.feature$/,
-          use: [
-            {
-              loader: "@badeball/cypress-cucumber-preprocessor/webpack",
-              options: cypressConfig,
-            },
-          ],
-        },
-      ],
-    },
-  };
-};
-
 export default defineConfig({
   e2e: {
     specPattern: "**/*.feature",
@@ -90,12 +57,10 @@ export default defineConfig({
   component: {
     specPattern: "**/*.feature",
     supportFile: false,
-    devServer(devServerConfig) {
-      return devServer({
-        ...devServerConfig,
-        framework: "react",
-        webpackConfig: webpackConfig(devServerConfig.cypressConfig),
-      });
+    devServer: {
+      framework: "next",
+      bundler: "webpack",
+    }
     },
     async setupNodeEvents(on, config) {
       // This is required for the preprocessor to be able to generate JSON reports after each run, and more.
@@ -105,4 +70,4 @@ export default defineConfig({
       return config;
     },
 
-}});
+});
