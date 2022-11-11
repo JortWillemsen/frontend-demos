@@ -1,4 +1,8 @@
-import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps'	
+import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
+
+Given ("I am on the home page", () => {
+  cy.visit('http://localhost:3000')
+});
 
 Given ('I open the about page', () => {
   cy.visit('/about');
@@ -14,4 +18,8 @@ Then ('I see {string} in the url', (path) => {
 
 Then ('I see {string} in the title', (title) => {
   cy.title().should('include', title);
+});
+
+Then ('I see {string} in the {string}', (text: string, element: string) => {
+  cy.get(element).contains(text);
 });

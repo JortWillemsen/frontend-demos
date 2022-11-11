@@ -10,20 +10,24 @@
     "e2e:headless": "start-server-and-test dev http://localhost:3000 cypress:headless"
   },
   "dependencies": {
-    "@cypress/webpack-dev-server": "^3.1.0",
+    "@badeball/cypress-cucumber-preprocessor": "latest",
+    "@cypress/webpack-preprocessor": "latest",
+    "@cypress/webpack-dev-server": "latest",
+    "cypress": "latest",
     "next": "latest",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "webpack": "^5.75.0"
+    "webpack": "latest"
   },
   "devDependencies": {
-    "@cucumber/cucumber": "^8.7.0",
+    "@badeball/cypress-cucumber-preprocessor": "latest",
+    "@cypress/webpack-preprocessor": "latest",
     "@types/node": "18.0.6",
     "@types/react": "18.0.15",
     "@types/react-dom": "18.0.6",
-    "cypress": "^10.11.0",
-    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress": "latest",
     "start-server-and-test": "1.14.0",
+    "ts-loader": "^9.4.1",
     "typescript": "4.7.4"
   },
   "cypress-cucumber-preprocessor": {
