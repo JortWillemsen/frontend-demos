@@ -1,10 +1,12 @@
 ﻿@inherits LayoutComponentBase
 
-<MudThemeProvider />
+<MudThemeProvider IsDarkMode="@IsDarkTheme" />
 
 <MudLayout>
     <MudAppBar Elevation="1">
         <MudText Typo="Typo.h5" Class="ml-3">BlazorMud</MudText>
+        <MudSpacer />
+        <ThemeToggle  OnThemeToggled="ThemeToggled" />
     </MudAppBar>
     <MudMainContent>
         <MudContainer MaxWidth="MaxWidth.Medium">
@@ -12,3 +14,12 @@
         </MudContainer>
     </MudMainContent>
 </MudLayout>
+
+@code {
+    private bool IsDarkTheme { get; set; }
+
+    private void ThemeToggled(bool isDarktheme)
+    {
+        IsDarkTheme = isDarktheme;
+    }
+}

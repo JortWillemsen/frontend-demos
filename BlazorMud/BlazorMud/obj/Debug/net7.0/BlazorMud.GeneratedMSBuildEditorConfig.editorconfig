@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/jort/Development/frontend-demos/BlazorMud/BlazorMud/Components/ThemeToggle.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xUaGVtZVRvZ2dsZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/jort/Development/frontend-demos/BlazorMud/BlazorMud/Pages/Index.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -31,7 +35,3 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/jort/Development/frontend-demos/BlazorMud/BlazorMud/Shared/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = b-pdipgzt30w
-
-[C:/Users/jort/Development/frontend-demos/BlazorMud/BlazorMud/Shared/NavMenu.razor]
-build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = b-wxwzx547np

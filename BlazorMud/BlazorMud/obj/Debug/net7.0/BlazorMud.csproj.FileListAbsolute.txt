@@ -818,7 +818,6 @@ C:\Users\jort\Development\frontend-demos\BlazorMud\BlazorMud\obj\Debug\net7.0\st
 C:\Users\jort\Development\frontend-demos\BlazorMud\BlazorMud\obj\Debug\net7.0\staticwebassets.build.json
 C:\Users\jort\Development\frontend-demos\BlazorMud\BlazorMud\obj\Debug\net7.0\staticwebassets.development.json
 C:\Users\jort\Development\frontend-demos\BlazorMud\BlazorMud\obj\Debug\net7.0\scopedcss\Shared\MainLayout.razor.rz.scp.css
-C:\Users\jort\Development\frontend-demos\BlazorMud\BlazorMud\obj\Debug\net7.0\scopedcss\Shared\NavMenu.razor.rz.scp.css
 C:\Users\jort\Development\frontend-demos\BlazorMud\BlazorMud\obj\Debug\net7.0\scopedcss\bundle\BlazorMud.styles.css
 C:\Users\jort\Development\frontend-demos\BlazorMud\BlazorMud\obj\Debug\net7.0\scopedcss\projectbundle\BlazorMud.bundle.scp.css
 C:\Users\jort\Development\frontend-demos\BlazorMud\BlazorMud\obj\Debug\net7.0\BlazorMud.csproj.CopyComplete
