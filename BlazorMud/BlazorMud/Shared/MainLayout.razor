@@ -3,20 +3,21 @@
 <MudThemeProvider IsDarkMode="@IsDarkTheme" />
 
 <MudLayout>
-    <MudAppBar Elevation="1">
+    <MudAppBar Elevation="2">
         <MudText Typo="Typo.h5" Class="ml-3">BlazorMud</MudText>
-        <MudSpacer />
-        <ThemeToggle  OnThemeToggled="ThemeToggled" />
+        <MudSpacer/>
+        <ThemeToggle OnThemeToggled="ThemeToggled"/>
     </MudAppBar>
     <MudMainContent>
         <MudContainer MaxWidth="MaxWidth.Medium">
             @Body
         </MudContainer>
     </MudMainContent>
+    <NavigationDrawer/>
 </MudLayout>
 
 @code {
-    private bool IsDarkTheme { get; set; }
+    private bool IsDarkTheme { get; set; } = true;
 
     private void ThemeToggled(bool isDarktheme)
     {

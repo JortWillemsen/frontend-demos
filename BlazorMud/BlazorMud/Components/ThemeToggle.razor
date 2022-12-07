@@ -2,12 +2,13 @@
 
 <MudToggleIconButton 
     Toggled="@IsDarkTheme"
-    Icon="@Icons.Material.Filled.LightMode"
+    Icon="@Icons.Material.Filled.DarkMode"
+    Color="Color.Surface"
     ToggledChanged="ThemeToggled"
-    ToggledIcon="@Icons.Material.Filled.DarkMode"/>
+    ToggledIcon="@Icons.Material.Filled.LightMode"/>
 
 @code {
-    private bool IsDarkTheme { get; set; }
+    private bool IsDarkTheme { get; set; } = true;
     
     [Parameter]
     public EventCallback<bool> OnThemeToggled { get; set; }

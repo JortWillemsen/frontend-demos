@@ -1,0 +1,20 @@
+﻿@inherits LayoutComponentBase
+
+<MudDrawer ClipMode="DrawerClipMode.Always" @bind-Open="@_open" Fixed="true" Elevation="1" Variant="@DrawerVariant.Mini" OpenMiniOnHover="true">
+    <MudNavMenu>
+        <MudNavLink
+            Match="NavLinkMatch.All"
+            Icon="@Icons.Filled.Dashboard">
+            Gallery
+        </MudNavLink>
+    </MudNavMenu>
+</MudDrawer>
+
+@code {
+    bool _open;
+
+    void ToggleDrawer()
+    {
+        _open = !_open;
+    } 
+}
