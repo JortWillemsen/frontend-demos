@@ -7,9 +7,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="Flurl" Version="3.0.6" />
+        <PackageReference Include="Flurl.Http" Version="3.2.4" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.0" PrivateAssets="all" />
         <PackageReference Include="MudBlazor" Version="6.1.4" />
+        <PackageReference Include="Tungstun.Cute" Version="1.0.1" />
     </ItemGroup>
 
     <ItemGroup>
@@ -23,6 +26,10 @@
       <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\font\fonts\open-iconic.woff" />
       <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\ICON-LICENSE" />
       <_ContentIncludedByDefault Remove="wwwroot\css\open-iconic\README.md" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\BlazorMud.Core\BlazorMud.Core.csproj" />
     </ItemGroup>
 
 </Project>

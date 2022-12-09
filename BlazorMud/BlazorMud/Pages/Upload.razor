@@ -1,0 +1,52 @@
+﻿@page "/create"
+@using Microsoft.AspNetCore.Components
+@using BlazorMud.Core
+@using BlazorMud.Agents
+@inject NavigationManager NavManager
+@inject IPostAgent Agent
+
+
+<PageTitle>Create</PageTitle>
+<MudText Typo="Typo.h2">Create post</MudText>
+
+<MudForm>
+    <MudImage 
+        src='@(_post.PhotoFile == null ? "" : $"data:{_post.ImageMimeType};base64,{Convert.ToBase64String(_post.PhotoFile)}")' 
+        Fluid="true" 
+        Elevation="25"
+        Class="rounded-lg"/>
+    <MudTextField @bind-Value="@_post.Title" Label="Title" Variant="Variant.Outlined"></MudTextField>
+    <MudTextField @bind-Value="@_post.Description" Label="Description" Lines="5" Variant="Variant.Outlined"></MudTextField>
+    <MudFileUpload T="IBrowserFile" FilesChanged="HandleFileSelected">
+        <ButtonTemplate>
+            <MudButton HtmlTag="label"
+                       Variant="Variant.Filled"
+                       Color="Color.Primary"
+                       StartIcon="@Icons.Filled.CloudUpload"
+                       for="@context">
+                Upload photo
+            </MudButton>
+        </ButtonTemplate>
+    </MudFileUpload>
+    <MudButton Variant="Variant.Filled" OnClick="HandleSubmit" EndIcon="@Icons.Material.Filled.Send" Color="Color.Primary">Submit</MudButton>
+</MudForm>
+
+@code {
+    private Post _post = new() { UserName = "BabaGanoush"};
+
+    private async Task HandleFileSelected(IBrowserFile file) {
+        _post.ImageMimeType = file.ContentType;
+
+        using var streamReader = new MemoryStream();
+        
+        await file.OpenReadStream().CopyToAsync(streamReader);
+        _post.PhotoFile = streamReader.ToArray();
+    }
+
+    private async Task HandleSubmit()
+    {
+        var result = await Agent.CreatePost(_post);
+        
+        NavManager.NavigateTo("/");
+    }
+}

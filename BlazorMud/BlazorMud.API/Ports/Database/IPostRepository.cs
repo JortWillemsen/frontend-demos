@@ -1,4 +1,4 @@
-﻿using BlazorMud.API.Domain;
+﻿using BlazorMud.Core;
 
 namespace BlazorMud.API.Ports.Database;
 

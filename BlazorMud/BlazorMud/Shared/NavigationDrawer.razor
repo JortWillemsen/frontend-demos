@@ -3,9 +3,16 @@
 <MudDrawer ClipMode="DrawerClipMode.Always" @bind-Open="@_open" Fixed="true" Elevation="1" Variant="@DrawerVariant.Mini" OpenMiniOnHover="true">
     <MudNavMenu>
         <MudNavLink
+            Href="/"
             Match="NavLinkMatch.All"
             Icon="@Icons.Filled.Dashboard">
             Gallery
+        </MudNavLink>
+        <MudNavLink
+            Href="/create"
+            Match="NavLinkMatch.All"
+            Icon="@Icons.Filled.Create">
+            Create
         </MudNavLink>
     </MudNavMenu>
 </MudDrawer>

@@ -1,4 +1,4 @@
-﻿namespace BlazorMud.API.Domain;
+﻿namespace BlazorMud.Core;
 
 public class Post
 {

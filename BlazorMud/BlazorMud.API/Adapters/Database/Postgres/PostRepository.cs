@@ -1,5 +1,5 @@
-﻿using BlazorMud.API.Domain;
-using BlazorMud.API.Ports.Database;
+﻿using BlazorMud.API.Ports.Database;
+using BlazorMud.Core;
 using DotnetCute.Exceptions.Http.Client;
 
 namespace BlazorMud.API.Adapters.Database.Postgres;

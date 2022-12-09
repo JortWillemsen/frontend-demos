@@ -1,5 +1,5 @@
-﻿using BlazorMud.API.Domain;
-using BlazorMud.API.Ports.Database;
+﻿using BlazorMud.API.Ports.Database;
+using BlazorMud.Core;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 

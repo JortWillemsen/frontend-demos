@@ -1,4 +1,4 @@
-﻿using BlazorMud.API.Domain;
+﻿using BlazorMud.Core;
 using Microsoft.EntityFrameworkCore;
 
 namespace BlazorMud.API.Adapters.Database.Postgres;

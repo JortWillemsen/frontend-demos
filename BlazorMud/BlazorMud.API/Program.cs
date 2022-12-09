@@ -1,6 +1,5 @@
 using BlazorMud.API;
 using BlazorMud.API.Adapters.Database.Postgres;
-using BlazorMud.API.Domain;
 using BlazorMud.API.Ports.Database;
 using Microsoft.EntityFrameworkCore;
 
@@ -32,6 +31,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(options =>
+{
+    options.AllowAnyOrigin();
+    options.AllowAnyHeader();
+    options.AllowAnyMethod();
+});
 
 using var scope = app.Services.CreateScope();
 using var context = scope.ServiceProvider.GetRequiredService<DatabaseContext>();

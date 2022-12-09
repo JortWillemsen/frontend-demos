@@ -1,4 +1,54 @@
 ﻿@page "/"
+@using BlazorMud.Agents
+@using BlazorMud.Core
+@inject IPostAgent Agent
 
-<PageTitle>Gallery</PageTitle>
-<MudText Typo="Typo.h2">Gallery</MudText>
+
+
+<MudContainer MaxWidth="MaxWidth.Small">
+    <PageTitle>Gallery</PageTitle>
+    <MudText Typo="Typo.h2">Gallery</MudText>
+    
+    <MudStack Spacing="30" >
+        @foreach (var post in Posts)
+        {
+            <MudCard>
+                <MudCardHeader>
+                    <CardHeaderAvatar>
+                        <MudAvatar Color="Color.Secondary">@post.UserName[0]</MudAvatar>
+                    </CardHeaderAvatar>
+                    <CardHeaderContent>
+                        <MudText Typo="Typo.body1">@post.Title</MudText>
+                        <MudText Typo="Typo.body1">@post.UserName</MudText>
+                    </CardHeaderContent>
+                    <CardHeaderActions>
+                        <MudIconButton Icon="@Icons.Material.Filled.Settings" Color="Color.Default"/>
+                    </CardHeaderActions>
+                </MudCardHeader>
+                <MudCardMedia Height="500" Image='@($"data:{post.ImageMimeType};base64,{Convert.ToBase64String(post.PhotoFile)}")'/>
+                <MudCardContent>
+                    <MudText Typo="Typo.body2">@post.Description</MudText>
+                </MudCardContent>
+                <MudCardActions>
+                    <MudIconButton Icon="@Icons.Material.Filled.Favorite" Color="Color.Default"/>
+                    <MudIconButton Icon="@Icons.Material.Filled.Share" Color="Color.Default"/>
+                </MudCardActions>
+            </MudCard>
+        }
+    </MudStack>
+</MudContainer>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        await SetPosts();
+    }
+
+    private ICollection<Post> Posts { get; set; } = new List<Post>();
+
+    public async Task SetPosts()
+    {
+        Posts = await Agent.GetAllPosts();
+        StateHasChanged();
+    }
+}

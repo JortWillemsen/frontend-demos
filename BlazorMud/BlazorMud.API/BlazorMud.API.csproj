@@ -14,4 +14,8 @@
         <PackageReference Include="Tungstun.Cute" Version="1.0.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\BlazorMud.Core\BlazorMud.Core.csproj" />
+    </ItemGroup>
+
 </Project>
